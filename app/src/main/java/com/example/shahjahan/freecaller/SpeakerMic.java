@@ -19,7 +19,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 /**
- * Created by shahjahan on 25/8/15.
+ * Created by Shahjahan on 25/8/15.
  */
 public class SpeakerMic {
     private static final int SAMPLE_RATE = 8000; // Hertz
@@ -73,7 +73,6 @@ public class SpeakerMic {
                         track.flush();
                         track.release();
                         speakers = false;
-                        return;
                     }
                     catch(SocketException e) {
 
@@ -106,7 +105,6 @@ public class SpeakerMic {
         // Creates the thread for capturing and transmitting audio
         mic = true;
         Thread thread = new Thread(new Runnable() {
-
             @Override
             public void run() {
                 // Create an instance of the AudioRecord class
